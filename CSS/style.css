@@ -1,0 +1,79 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FAFAFA;
+    color: #424242;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Enlace volver */
+a {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #1976D2;
+    font-weight: bold;
+}
+
+/* Títulos */
+h1 {
+    color: #FF6F00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #FF6F00;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFF9C4;
+    padding-bottom: 5px;
+}
+
+/* Imagen */
+img {
+    display: block;
+    width: 300px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Texto */
+p {
+    margin-bottom: 15px;
+}
+
+/* Listas */
+ul,
+ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
