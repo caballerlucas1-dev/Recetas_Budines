@@ -12,12 +12,6 @@ body {
     color: black;
     padding: 20px;
 }
-input{
-  MARGIN: 30px;
-  bording: 1px solid gray;
-  padding: 10px;
-  WIDTH: 300px;
-}
 
 /* Encabezado */
 .site-header {
@@ -32,8 +26,14 @@ input{
 .lead {
     color: gray;
 }
-
-
+img {
+    width: 50%;
+    border-radius: 25px;
+}
+.ingredientes {
+    margin-left: 30px;
+    padding: 10px 0;
+}
 
 /* Tarjeta */
 .Listado-recetas {
@@ -65,8 +65,21 @@ input{
 .card-body p {
     padding: 10px 0;
 }
+.ingredientes-container {
+    list-style-type: none;
 
+    
+}
 
+.ingredientes-container ul {
+    list-style-type: none;
+    padding: 10px;
+    margin-left: 700px;
+    margin-top: -200px;
+    background-color: #fff0f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
 /* Botón */
 .btn {
     display: inline-block;
