@@ -1,0 +1,300 @@
+<tool_call>
+<function=Write>
+<parameter=content>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budines - Recetas Caseras</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body class="budines-page">
+    <header class="site-header">
+        <h1>Budines Caseros</h1>
+        <p class="lead">Húmedos y sabrosos budines para disfrutar en cualquier momento.</p>
+    </header>
+
+    <main>
+        <section class="Listado-recetas">
+            <!-- Budín de Vainilla -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/budin-vainilla.webp" alt="Budín de Vainilla">
+                    <h2>Budín de Vainilla</h2>
+                    <p>Clásico y suave, ideal para acompañar con café o té.</p>
+                    <button class="btn" onclick="showModal('vainilla')">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Budín de Chocolate -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/budin-chocolate.webp" alt="Budín de Chocolate">
+                    <h2>Budín de Chocolate</h2>
+                    <p>Rico y húmedo, con trozos de chocolate o cacao en polvo.</p>
+                    <button class="btn" onclick="showModal('chocolate')">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Budín de Dulce de Leche -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/budin-dulcedeleche.webp" alt="Budín de Dulce de Leche">
+                    <h2>Budín de Dulce de Leche</h2>
+                    <p>Suave y dulce, con un suave sabor a dulce de leche en cada bocado.</p>
+                    <button class="btn" onclick="showModal('dulce')">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Budín de Frutilla -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/budin-fresa.webp" alt="Budín de Frutilla">
+                    <h2>Budín de Frutilla</h2>
+                    <p>Fresco y frutal, con trozos de frutilla fresca o esencia.</p>
+                    <button class="btn" onclick="showModal('frutilla')">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Budín de Limón -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/budin-limon.webp" alt="Budín de Limón">
+                    <h2>Budín de Limón</h2>
+                    <p>Cítrico y refrescante, con ralladura y jugo de limón natural.</p>
+                    <button class="btn" onclick="showModal('limon')">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Budín de Café -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/como-cafe.webp" alt="Budín de Café">
+                    <h2>Budín de Café</h2>
+                    <p>Intenso y aromático, perfecto para los amantes del café.</p>
+                    <button class="btn" onclick="showModal('cafe')">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Budín de Nuez -->
+            <article class="receta-carta">
+                <div class="card-body">
+                    <img src="../imagenes/budin-nuez.webp" alt="Budín de Nuez">
+                    <h2>Budín de Nuez</h2>
+                    <p>Crocante y sabroso, con trozos de nuez caramelizada.</p>
+                    <button class="btn" onclick="showModal('nuez')">Ver receta</button>
+                </div>
+            </article>
+        </section>
+
+        <div class="back-link">
+            <a class="btn-back" href="../Principal.html">Volver al inicio</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Recetas Caseras</p>
+    </footer>
+
+    <!-- Modal overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(recipe) {
+            const titleMap = {
+                vainilla: 'Budín de Vainilla',
+                chocolate: 'Budín de Chocolate',
+                dulce: 'Budín de Dulce de Leche',
+                frutilla: 'Budín de Frutilla',
+                limon: 'Budín de Limón',
+                cafe: 'Budín de Café',
+                nuez: 'Budín de Nuez'
+            };
+            const contentMap = {
+                vainilla: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 taza y 1/2 de harina leudante</li>
+                        <li>3/4 taza de azúcar</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>2 cucharaditas de esencia de vainilla</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>1/4 taza de leche</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Cremar mantequilla y azúcar.</li>
+                        <li>Agregar huevos y vainilla.</li>
+                        <li>Mezclar harina y bicarbonato.</li>
+                        <li>Incorporar secos y húmedos alternando con leche.</li>
+                        <li>Verter en molde y hornear 35-50 min.</li>
+                        <li>Reposar 10-15 min y servir.</li>
+                    </ol>
+                `,
+                chocolate: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 y 1/2 tazas de harina</li>
+                        <li>1 taza de azúcar</li>
+                        <li>1/2 taza de cacao en polvo</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>1 taza de leche</li>
+                        <li>1 cucharadita de polvo de hornear</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Mezclar harina, cacao, polvo de hornear, bicarbonato y sal.</li>
+                        <li>Batir mantequilla y azúcar hasta cremoso.</li>
+                        <li>Agregar huevos uno a uno.</li>
+                        <li>Agregar la mezcla seca alternando con leche.</li>
+                        <li>Verter en molde y hornear 40-45 min.</li>
+                        <li>Enfriar y servir.</li>
+                    </ol>
+                `,
+                dulce: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 y 1/2 tazas de harina</li>
+                        <li>1 taza de azúcar</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>1/2 taza de leche</li>
+                        <li>1/2 taza de dulce de leche</li>
+                        <li>1 cucharadita de polvo de hornear</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Cremar mantequilla y azúcar.</li>
+                        <li>Agregar huevos y dulce de leche.</li>
+                        <li>Mezclar harina, polvo de hornear, bicarbonato y sal.</li>
+                        <li>Incorporar secos y húmedos alternando con leche.</li>
+                        <li>Verter en molde y hornear 35-45 min.</li>
+                        <li>Enfriar y servir.</li>
+                    </ol>
+                `,
+                frutilla: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 y 1/2 tazas de harina</li>
+                        <li>3/4 taza de azúcar</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>1/2 taza de leche</li>
+                        <li>1 taza de frutillas picadas</li>
+                        <li>1 cucharadita de polvo de hornear</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Cremar mantequilla y azúcar.</li>
+                        <li>Agregar huevos.</li>
+                        <li>Mezclar harina, polvo de hornear, bicarbonato y sal.</li>
+                        <li>Incorporar secos y húmedos alternando con leche.</li>
+                        <li>Agregar frutillas.</li>
+                        <li>Verter en molde y hornear 35-40 min.</li>
+                        <li>Enfriar y servir.</li>
+                    </ol>
+                `,
+                limon: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 y 1/2 tazas de harina</li>
+                        <li>3/4 taza de azúcar</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>Ralladura y jugo de 1 limón</li>
+                        <li>1/2 taza de leche</li>
+                        <li>1 cucharadita de polvo de hornear</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Cremar mantequilla y azúcar.</li>
+                        <li>Agregar huevos, ralladura y jugo de limón.</li>
+                        <li>Mezclar harina, polvo de hornear, bicarbonato y sal.</li>
+                        <li>Incorporar secos y húmedos alternando con leche.</li>
+                        <li>Verter en molde y hornear 35-45 min.</li>
+                        <li>Enfriar y servir.</li>
+                    </ol>
+                `,
+                cafe: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 y 1/2 tazas de harina</li>
+                        <li>3/4 taza de azúcar</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>1/4 taza de café fuerte</li>
+                        <li>1/2 taza de leche</li>
+                        <li>1 cucharadita de polvo de hornear</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Cremar mantequilla y azúcar.</li>
+                        <li>Agregar huevos y café.</li>
+                        <li>Mezclar harina, polvo de hornear, bicarbonato y sal.</li>
+                        <li>Incorporar secos y húmedos alternando con leche.</li>
+                        <li>Verter en molde y hornear 35-45 min.</li>
+                        <li>Enfriar y servir.</li>
+                    </ol>
+                `,
+                nuez: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 y 1/2 tazas de harina</li>
+                        <li>3/4 taza de azúcar</li>
+                        <li>1/2 taza de mantequilla</li>
+                        <li>2 huevos</li>
+                        <li>1/2 taza de leche</li>
+                        <li>1 taza de nueces picadas</li>
+                        <li>1 cucharadita de polvo de hornear</li>
+                        <li>1/2 cucharadita de bicarbonato</li>
+                        <li>Una pizca de sal</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 180°C.</li>
+                        <li>Cremar mantequilla y azúcar.</li>
+                        <li>Agregar huevos.</li>
+                        <li>Mezclar harina, polvo de hornear, bicarbonato y sal.</li>
+                        <li>Incorporar secos y húmedos alternando con leche.</li>
+                        <li>Agregar nueces.</li>
+                        <li>Verter en molde y hornear 35-45 min.</li>
+                        <li>Enfriar y servir.</li>
+                    </ol>
+                `
+            };
+            document.getElementById('modalTitle').textContent = titleMap[recipe];
+            document.getElementById('modalBody').innerHTML = contentMap[recipe];
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
