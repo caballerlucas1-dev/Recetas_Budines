@@ -12,18 +12,22 @@
         color: black;
         padding: 25px;
     }
-
+    html, body {
+    height: 100%;
+    }
     /* Encabezado */
     .site-header {
-        text-align: center;
         margin-bottom: 30px;
+        position: relative;
     }
 
     .site-header h1 {
         color: #8b4513;
+        text-align: center;
     }
 
     .lead {
+        margin-top: 5px;
         color: #555;
     }
 
@@ -40,9 +44,7 @@
         transition: filter 0.3s ease;
     }
 
-    img:hover {
-        filter: brightness(100%);contrast(110%);
-    }
+
 
     .ingredientes {
         margin-left: 30px;
@@ -54,6 +56,7 @@
         display: grid;
         grid-template-columns:1fr 1fr 1fr;
         gap: 20px;
+        filter:brightness(0.9);
     }
 
     .Listado-recetas-Principal {
@@ -66,6 +69,7 @@
     .receta-carta {
     width: 100%;
     background-color: white;
+    filter:brightness(0.9);
     border-radius: 25px;
     border: 1px solid #ddd;
     padding: 20px;
@@ -78,6 +82,7 @@
     .receta-carta1 {
     width: 100%;
     background-color: white;
+    filter:brightness(0.9);
     border-radius: 25px;
     border: 1px solid #ddd;
     padding: 20px;
@@ -89,11 +94,14 @@
  
     }
 
-    .receta-carta:hover, .receta-carta1:hover {
+    .receta-carta:hover, .receta-carta1:hover, img:hover {
         transform: scale(1.01);
         box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        filter:brightness(1.0);
+    }   
+    .receta-carta {
+    cursor: pointer;
     }
-
     .card-body h2 {
         padding-top: 10px ;
     }
@@ -117,15 +125,7 @@
     }
 
     /* Botón */
-    .btn {
-        display: inline-block;
-        background-color: #d2691e;
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
+   
 
     /* Pie de página */
     .site-footer {
@@ -150,18 +150,17 @@
     .principal-page .lead {
         color: #555;
     }
-
+    
     /* Botón de regreso en las páginas secundarias */
-    .btn-back {
-        margin-top: 0;    
-        display: inline-block;
+    .btn-back {   
+        position: absolute;
+        
         padding: 10px 20px;
         background-color: #8b4513;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        margin-bottom: 30px;
-
+        left: 20px;
         /* ensure no margin */
     }
     .btn-back:hover {
