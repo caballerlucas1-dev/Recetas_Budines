@@ -75,8 +75,21 @@
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .receta-carta1 {
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+    }
 
-    .receta-carta:hover {
+    .receta-carta:hover, .receta-carta1:hover {
         transform: scale(1.01);
         box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
@@ -140,21 +153,22 @@
 
     /* Botón de regreso en las páginas secundarias */
     .btn-back {
+        margin-top: 0;    
         display: inline-block;
-        position: absolute;
-        top: 20px;
-        left: 20px;
         padding: 10px 20px;
-        background-color: #8b4513; /* default fallback */
+        background-color: #8b4513;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        transition: background 0.3s ease;
-        margin: 0; /* ensure no margin */
+        margin-bottom: 30px;
+
+        /* ensure no margin */
     }
     .btn-back:hover {
         background-color: #a0522d;
+        
     }
+ 
 
     /* Colores específicos por categoría */
     .budines-page .btn-back { background-color: #8b4513; }
