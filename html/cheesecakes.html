@@ -6,51 +6,147 @@
     <title>Cheesecakes - Recetas Caseras</title>
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body class="postres-page">
+<body class="cheesecakes-page">
     <header class="site-header">
-        <a class="btn-back" href="../index.html">Volver al inicio</a>
+        <a class="btn-back" href="../Principal.html">Volver al inicio</a>
         <h1>Cheesecakes</h1>
     </header>
     <main>
-        <section class="receta-detalle">
-            <article>
-                <img src="../imagenes/cheesecakes.jpg" alt="Cheesecakes" style="max-width: 400px;">
-                <h2>Cheesecakes Individuales</h2>
-                <p>Deliciosos, cremosos y sofisticados. Perfectos para impresionar en cualquier ocasión.</p>
-                
-                <h3>Ingredientes (para 6 cheesecakes):</h3>
-                <ul class="ingredientes">
-                    <li>200g de galletas digestivas</li>
-                    <li>100g de mantequilla derretida</li>
-                    <li>500g de queso crema</li>
-                    <li>100g de azúcar</li>
-                    <li>2 huevos</li>
-                    <li>1 cucharadita de extracto de vainilla</li>
-                    <li>El jugo de 1/2 limón</li>
-                    <li>Mermelada o frutas frescas para decorar</li>
-                </ul>
-                
-                <h3>Preparación:</h3>
-                <ol class="ingredientes">
-                    <li>Precalentar horno a 160°C.</li>
-                    <li>Procesar galletas hasta obtener migas finas.</li>
-                    <li>Mezclar migas de galleta con mantequilla derretida.</li>
-                    <li>Presionar la mezcla en moldes individuales para formar la base.</li>
-                    <li>Batir queso crema con azúcar hasta obtener una consistencia suave.</li>
-                    <li>Agregar huevos de uno en uno, batiendo bien después de cada adición.</li>
-                    <li>Añadir vainilla y jugo de limón.</li>
-                    <li>Verter la mezcla sobre las bases de galleta.</li>
-                    <li>Hornear en baño maría durante 25-30 minutos.</li>
-                    <li>Enfriar completamente y refrigerar al menos 4 horas.</li>
-                    <li>Decorar con mermelada o frutas antes de servir.</li>
-                </ol>
-                
-                <h3>Tiempo: 45 minutos (+ 4h refrigeración) | Dificultad: Media</h3>
+        <section class="Listado-recetas">
+            <!-- Cheesecake Clásico -->
+            <article class="receta-carta1" onclick="showModal('clasico')">
+                <div class="card-body">
+                    <img src="../imagenes/cheesecake.jpg" alt="Cheesecake Clásico">
+                    <h2>Cheesecake Clásico</h2>
+                    <p>Cremoso y sofisticado, perfecto para ocasiones especiales.</p>
+                    <button class="btn">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Cheesecake de Fresas -->
+            <article class="receta-carta1" onclick="showModal('fresas')">
+                <div class="card-body">
+                    <img src="../imagenes/cheesecake-fresas.jpg" alt="Cheesecake de Fresas">
+                    <h2>Cheesecake de Fresas</h2>
+                    <p>Con mermelada de fresas y frutas frescas.</p>
+                    <button class="btn">Ver receta</button>
+                </div>
+            </article>
+
+            <!-- Cheesecake de Chocolate -->
+            <article class="receta-carta1" onclick="showModal('chocolate')">
+                <div class="card-body">
+                    <img src="../imagenes/cheesecake-chocolate.jpg" alt="Cheesecake de Chocolate">
+                    <h2>Cheesecake de Chocolate</h2>
+                    <p>Intenso y delicioso con cobertura de chocolate.</p>
+                    <button class="btn">Ver receta</button>
+                </div>
             </article>
         </section>
     </main>
+
     <footer class="site-footer">
         <p>&copy; 2026 Recetas Caseras</p>
     </footer>
+
+    <!-- Modal overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(recipe) {
+            const titleMap = {
+                clasico: 'Cheesecake Clásico',
+                fresas: 'Cheesecake de Fresas',
+                chocolate: 'Cheesecake de Chocolate'
+            };
+            const contentMap = {
+                clasico: `
+                    <p><strong>Ingredientes (para 6 cheesecakes):</strong></p>
+                    <ul>
+                        <li>200g de galletas digestivas</li>
+                        <li>100g de mantequilla derretida</li>
+                        <li>500g de queso crema</li>
+                        <li>100g de azúcar</li>
+                        <li>2 huevos</li>
+                        <li>1 cucharadita de vainilla</li>
+                        <li>Jugo de 1/2 limón</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Precalentar horno a 160°C.</li>
+                        <li>Procesar galletas hasta obtener migas.</li>
+                        <li>Mezclar migas con mantequilla derretida.</li>
+                        <li>Presionar en moldes individuales.</li>
+                        <li>Batir queso crema con azúcar.</li>
+                        <li>Agregar huevos, vainilla y limón.</li>
+                        <li>Verter sobre bases.</li>
+                        <li>Hornear en baño maría 25-30 minutos.</li>
+                        <li>Refrigerar mínimo 4 horas.</li>
+                    </ol>
+                `,
+                fresas: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>Base de galletas (200g galletas + 100g mantequilla)</li>
+                        <li>600g de queso crema</li>
+                        <li>120g de azúcar</li>
+                        <li>2 huevos</li>
+                        <li>200g de mermelada de fresas</li>
+                        <li>Fresas frescas para decorar</li>
+                        <li>1 cucharadita de vainilla</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Preparar base de galletas.</li>
+                        <li>Batir queso crema con azúcar.</li>
+                        <li>Agregar huevos y vainilla.</li>
+                        <li>Verter 2/3 de la mezcla sobre las bases.</li>
+                        <li>Agregar mermelada de fresas.</li>
+                        <li>Cubrir con resto de mezcla.</li>
+                        <li>Hornear en baño maría 30-35 minutos.</li>
+                        <li>Decorar con fresas frescas.</li>
+                    </ol>
+                `,
+                chocolate: `
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>Base de galletas (200g galletas + 100g mantequilla)</li>
+                        <li>600g de queso crema</li>
+                        <li>120g de azúcar</li>
+                        <li>2 huevos</li>
+                        <li>200g de chocolate derretido</li>
+                        <li>1 cucharadita de vainilla</li>
+                        <li>Virutas de chocolate para decorar</li>
+                    </ul>
+                    <p><strong>Preparación:</strong></p>
+                    <ol>
+                        <li>Preparar base de galletas.</li>
+                        <li>Batir queso crema con azúcar.</li>
+                        <li>Agregar huevos y vainilla.</li>
+                        <li>Reservar 1/2 de mezcla.</li>
+                        <li>Mezclar chocolate derretido en la otra mitad.</li>
+                        <li>Alternar capas en los moldes.</li>
+                        <li>Hornear en baño maría 30-35 minutos.</li>
+                        <li>Decorar con virutas de chocolate.</li>
+                    </ol>
+                `
+            };
+            document.getElementById('modalTitle').textContent = titleMap[recipe];
+            document.getElementById('modalBody').innerHTML = contentMap[recipe];
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
 </body>
 </html>
