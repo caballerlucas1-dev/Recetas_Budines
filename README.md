@@ -1,3 +1,3 @@
 ﻿# Budin-de-chocolate
 # Budin-de-chocolate
-Receta Budin de chocolate Creado con Html, en su futuro contendra JavaScrip y Css
+Receta Budin de chocolate Creado con Html, en construccion.
