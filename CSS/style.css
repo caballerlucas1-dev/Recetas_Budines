@@ -1,227 +1,189 @@
-    /* Reiniciar márgenes */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/*
+ * Stylesheet for Recetas Budines website
+ * Defines CSS variables for consistent color scheme across all pages
+ * Variables: --primary, --secondary, --background, --text, --accent, --light, --border, --shadow
+ * Some specific colors are retained for certain sections (e.g., principal-page gradients, button hovers)
+ */
 
-    /* Página */
-    body {
-        font-family:Tahoma, sans-serif ;
-        background:linear-gradient(  transparent, #edb186,#d2691e);
-        color: black;
-        padding: 25px;
-    }
-    html, body {
-    height: 100%;
-    }
-    /* Encabezado */
-    .site-header {
-        margin-bottom: 30px;
-        position: relative;
-    }
+:root {
+    --primary: #ff8a65; /* light orange */
+    --secondary: #ffab91; /* peach */
+    --background: #fff8e1; /* very light cream */
+    --text: #4e342e; /* dark brown */
+    --accent: #ef6c00; /* dark orange */
+    --light: #ffffff; /* white */
+    --border: #fff8e1; /* light peach */
+    --shadow: rgba(0,0,0,0.15); /* lighter shadow */
+}
 
-    .site-header h1 {
-        color: #8b4513;
-        text-align: center;
-    }
+/* CSS Variables defined above for consistent colors across the site */
 
-    .lead {
-        margin-top: 5px;
-        color: #555;
-    }
+/* Reset margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;  /* Recorta la imagen sin deformarla */
-        border-radius: 25px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        margin:auto;
-        border: 1px solid #ddd;
-        display: block;
-        filter: brightness(0.9); /* Oscurece ligeramente la imagen */
-        transition: filter 0.3s ease;
-    }
+/* Page */
+body {
+    font-family: Tahoma, sans-serif;
+    background: var(--background); /* using variables */
+    color: var(--text);
+    padding: 25px;
+}
 
+/* Header */
+header {
+    margin-bottom: 30px;
+    position: relative;
+}
 
+header h1 {
+    text-align: center;
+}
 
-    .ingredientes {
-        margin-left: 30px;
-        padding: 10px 0;
-    }
+.lead {
+    margin-top: 5px;
+    color: inherit;
+}
 
-    /* Tarjeta */
-    .Listado-recetas {
-        display: grid;
-        grid-template-columns:1fr 1fr 1fr;
-        gap: 20px;
-        filter:brightness(0.9);
-    }
-
-    .Listado-recetas-Principal {
-        display: grid;
-        grid-template-columns:1fr 1fr 1fr 1fr;
-        gap: 20px;
-    }
-
-    /* Contenido */
-    .receta-carta {
+img {
     width: 100%;
-    background-color: white;
-    filter:brightness(0.9);
+    height: 200px;
+    object-fit: cover;  /* Recorta la imagen sin deformarla */
     border-radius: 25px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
-    display: flex;
-    text-align: justify;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .receta-carta1 {
-    width: 100%;
-    background-color: white;
-    filter:brightness(0.9);
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
-    display: flex;
-    text-align: justify;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
- 
-    }
+    box-shadow: 0 8px 20px var(--shadow);
+    margin:auto;
+    border: 1px solid var(--border);
+    display: block;
+    filter: brightness(0.9); /* Oscurece ligeramente la imagen */
+    transition: filter 0.3s ease;
+}
 
-    .receta-carta:hover, .receta-carta1:hover, img:hover {
-        transform: scale(1.01);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        filter:brightness(1.0);
-    }   
-    .receta-carta {
+
+
+/* Ingredientes */
+.ingredientes {
+    margin-left: 30px;
+    padding: 10px 0;
+}
+
+/* Tarjeta */
+.Listado-recetas {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.Listado-recetas-Principal {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* Contenido */
+.receta-carta {
+    width: 100%;
+    background-color: var(--light);
+    filter:brightness(0.97);
+    border-radius: 25px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    box-shadow: 0 0px 20px var(--shadow);
+    text-align: justify;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.receta-carta:hover, .receta-carta1:hover, img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 30px var(--shadow);
+    filter:brightness(1.0);
+}
+.receta-carta {
     cursor: pointer;
-    }
-    .card-body h2 {
-        padding-top: 10px ;
-    }
+}
+.card-body h2 {
+    padding-top: 10px ;
+}
 
-    .card-body p {
-        padding: 10px 0;
-    }
+.card-body p {
+    padding: 10px 0;
+}
 
-    .ingredientes-container {
-        list-style-type: none;
-    }
+.ingredientes-container {
+    list-style-type: none;
+}
 
-    .ingredientes-container ul {
-        list-style-type: none;
-        padding: 10px;
-        margin-left: 700px;
-        margin-top: -200px;
-        background-color: #fff8f0;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-    }
+.ingredientes-container ul {
+    list-style-type: none;
+    padding: 10px;
+    margin-left: 700px;
+    margin-top: -200px;
+    background-color: var(--background); /* light beige for ingredients box */
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
 
-    /* Botón */
-   
+/* Botón */
+.btn-back {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--light);
+    text-decoration: none;
+    border-radius: 5px;
+    left: 20px;
+    /* ensure no margin */
+}
+.btn-back:hover {
+    background-color: #ff7043;
+}
 
-    /* Pie de página */
-    .site-footer {
-        text-align: center;
-        margin-top: 30px;
-    }
+/* Pie de página */
+.site-footer {
+    text-align: center;
+    margin-top: 30px;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        .recipe-list {
-            grid-template-columns: 1fr;
-        }
+/* Responsive */
+@media (max-width: 768px) {
+    .recipe-list {
+        grid-template-columns: 1fr;
     }
+}
 
-    /* Estilos específicos para la página principal */
-    .principal-page {
-        background: linear-gradient(transparent, #ffcccb, #ffb6c1); /* tono rosado claro */
-    }
-    .principal-page .site-header h1 {
-        color: #8b0000; /* rojo oscuro */
-    }
-    .principal-page .lead {
-        color: #555;
-    }
-    
-    /* Botón de regreso en las páginas secundarias */
-    .btn-back {   
-        position: absolute;
-        
-        padding: 10px 20px;
-        background-color: #8b4513;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        left: 20px;
-        /* ensure no margin */
-    }
-    .btn-back:hover {
-        background-color: #a0522d;
-        
-    }
- 
 
-    /* Colores específicos por categoría */
-    .budines-page .btn-back { background-color: #8b4513; }
-    .galletas-page .btn-back { background-color: #d2691e; }
-    .tortas-page .btn-back { background-color: #bc8f8f; }
-    .postres-page .btn-back { background-color: #dda0dd; }
 
-    /* Hover variations per class */
-    .budines-page .btn-back:hover { background-color: #a0522d; }
-    .galletas-page .btn-back:hover { background-color: #e08b3b; }
-    .tortas-page .btn-back:hover { background-color: #c9a69f; }
-    .postres-page .btn-back:hover { background-color: #e4b5f0; }
 
-    /* Modal overlay */
-    .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.5);
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-    }
-    .modal-content {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        width: 90%;
-        max-width: 500px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        position: relative;
-    }
-    .modal-content h2 {
-        margin-top: 0;
-    }
-    .modal-close {
-        position: absolute;
-        top: 10px; right: 10px;
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    /* Fondos y colores de texto por categoría */
-    .budines-page { background: #fdf5e6; color: #8b4513; }
-    .galletas-page { background: #fff8e1; color: #d2691e; }
-    .tortas-page { background: #fff0f5; color: #bc8f8f; }
-    .postres-page { background: #f5f5ff; color: #800080; }
-
-    /* Asegurar que los encabezados y párromos hereden el color del cuerpo */
-    .budines-page h1, .budines-page .lead, .budines-page p,
-    .galletas-page h1, .galletas-page .lead, .galletas-page p,
-    .tortas-page h1, .tortas-page .lead, .tortas-page p,
-    .postres-page h1, .postres-page .lead, .postres-page p {
-        color: inherit;
-    }
+/* Modal overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: relative;
+}
+.modal-content h2 {
+    margin-top: 0;
+}
+.modal-close {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
