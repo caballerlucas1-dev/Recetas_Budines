@@ -130,15 +130,17 @@ img {
 .btn-back {
     position: absolute;
     padding: 10px 20px;
-    background-color: var(--primary);
-    color: var(--light);
+    background-color: #4c3b26c9;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     left: 20px;
-    /* ensure no margin */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-back:hover {
-    background-color: #ff7043;
+    background-color: #856742c6;
+    transform: scale(1.01);
+    box-shadow: 0 15px 30px var(--shadow);
 }
 
 /* Pie de página */
